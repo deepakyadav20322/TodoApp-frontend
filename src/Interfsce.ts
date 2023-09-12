@@ -12,6 +12,3 @@ export interface TodoListProps {
     // deleteTodo: (id: string) => Promise<void>; // Add deleteTodo prop
 
   }
-  interface IdeleteTodo {
-
-  }

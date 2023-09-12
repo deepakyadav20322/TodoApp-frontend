@@ -1,8 +1,8 @@
-// import React from 'react'
+
 import SingleTodo from './SingleTodo'
 import { TodoListProps } from '../Interfsce'
 
-const TodoList:React.FC<TodoListProps> = ({todos,setTodos,todoChange,setTodoChange}) => {
+const TodoList:React.FC<TodoListProps> = ({todos,todoChange,setTodoChange}) => {
 
 
   return (

@@ -11,7 +11,7 @@ interface SingleTodoProps {
   setTodoChange: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SingleTodo: React.FC<SingleTodoProps> = ({todoInfo, id,todoChange,setTodoChange,}) => 
+const SingleTodo: React.FC<SingleTodoProps> = ({todoInfo, id,setTodoChange,}) => 
        {
   // const baseURL = "http://127.0.0.1:4400";
   const baseURL = "https://todoapp-typescript.onrender.com";
@@ -19,7 +19,6 @@ const SingleTodo: React.FC<SingleTodoProps> = ({todoInfo, id,todoChange,setTodoC
   const [loadingDelete , setLoadingDelete] = useState<boolean>(false);
 
   const deleteTodo = async (
-    e: React.ChangeEvent<HTMLInputElement>,
     id: string
   ) => {
     try {
@@ -37,7 +36,6 @@ const SingleTodo: React.FC<SingleTodoProps> = ({todoInfo, id,todoChange,setTodoC
   };
 
   const isComplite = async (
-    e: React.ChangeEvent<HTMLInputElement>,
     id: string
   ) => {
     try {
@@ -66,8 +64,8 @@ const SingleTodo: React.FC<SingleTodoProps> = ({todoInfo, id,todoChange,setTodoC
         {/* <AiFillEdit size={30} className="mx-[3px] cursor-pointer" /> */}
         <div className="border-[1px] ">{!loadingDelete?(
         <AiFillDelete
-          onClick={(e: React.ChangeEvent<HTMLInputElement>) =>
-            deleteTodo(e, id)
+          onClick={() =>
+            deleteTodo(id)
           }
           size={30}
           color="red"
@@ -78,8 +76,8 @@ const SingleTodo: React.FC<SingleTodoProps> = ({todoInfo, id,todoChange,setTodoC
         <div className="border-[1px]">
           {!loading?
         (<MdDone
-          onClick={(e: React.ChangeEvent<HTMLInputElement>) =>
-            isComplite(e, id)
+          onClick={() =>
+            isComplite(id)
           }
           size={30}
           className="mx-[3px] cursor-pointer  p-[3px]  hover:bg-slate-200 transition-all duration-200"
